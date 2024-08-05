@@ -1,0 +1,24 @@
+{
+  "name": "odin-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -i input.css -o output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roose7392/odin-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Roose7392/odin-calculator/issues"
+  },
+  "homepage": "https://github.com/Roose7392/odin-calculator#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.7"
+  }
+}
