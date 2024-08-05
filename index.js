@@ -2,6 +2,7 @@
 let currentNumber = "0";
 let storedNumber = "";
 let currentOperation = "";
+let isWriting = true;
 const storedNumberNode = document.getElementById("stored-number");
 const currentNumberNode = document.getElementById("current-number");
 const controller = document.getElementById("controller");
@@ -19,11 +20,12 @@ controller === null || controller === void 0 ? void 0 : controller.addEventListe
     }
 });
 function clickNumber(num) {
-    if (num === "." && currentNumber.includes(".")) {
-        return;
-    }
-    if (currentNumber === "0") {
+    if (currentNumber === "0" || !isWriting) {
         currentNumber = num === "." ? "0." : num;
+        isWriting = true;
+    }
+    else if (num === "." && currentNumber.includes(".")) {
+        return;
     }
     else {
         currentNumber += num;
@@ -37,11 +39,13 @@ function clickOperation(operation) {
         currentNumber = calc();
         storedNumber = "";
         currentOperation = "";
+        isWriting = false;
         return;
     }
     storedNumber = currentNumber;
     currentOperation = operation;
     currentNumber = "0";
+    isWriting = true;
 }
 function calc() {
     let result = "";

@@ -3,6 +3,7 @@ type operation = "plus" | "minus" | "divide" | "multiply";
 let currentNumber = "0";
 let storedNumber = "";
 let currentOperation: operation | "" = "";
+let isWriting = true;
 const storedNumberNode = document.getElementById("stored-number")!;
 const currentNumberNode = document.getElementById("current-number")!;
 
@@ -22,11 +23,11 @@ controller?.addEventListener("click", (e) => {
 });
 
 function clickNumber(num: string) {
-  if (num === "." && currentNumber.includes(".")) {
-    return;
-  }
-  if (currentNumber === "0") {
+  if (currentNumber === "0" || !isWriting) {
     currentNumber = num === "." ? "0." : num;
+    isWriting = true;
+  } else if (num === "." && currentNumber.includes(".")) {
+    return;
   } else {
     currentNumber += num;
   }
@@ -40,11 +41,13 @@ function clickOperation(operation: operation | "equals") {
     currentNumber = calc();
     storedNumber = "";
     currentOperation = "";
+    isWriting = false;
     return;
   }
   storedNumber = currentNumber;
   currentOperation = operation;
   currentNumber = "0";
+  isWriting = true;
 }
 
 function calc() {
