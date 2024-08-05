@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Roose7392/odin-calculator#readme",
   "devDependencies": {
-    "tailwindcss": "^3.4.7"
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.4"
   }
 }

@@ -10,35 +10,35 @@
   <body>
     <div class="flex justify-center items-center h-screen">
       <div class="bg-slate-600 w-96 shrink-0 rounded-lg">
-        <div class="p-3 flex flex-col text-yellow-100">
-          <div class="self-end text-xl">12 +</div>
-          <div class="self-end text-3xl">51341351245135</div>
+        <div class="p-3">
+          <div class="p-2 flex flex-col bg-blue-400">
+            <div id="stored-number" class="self-end text-lg min-h-8"></div>
+            <div id="current-number" class="self-end text-4xl">0</div>
+          </div>
         </div>
         <div
+          id="controller"
           class="grid grid-cols-4 p-3 gap-2 [&>button]:bg-slate-200 [&>button]:text-center [&>button]:rounded-md [&>button]:py-2 [&>button]:text-xl [&>button:hover]:bg-slate-400 [&>button:hover]:active:scale-95"
         >
-          <button class="col-span-2">AC</button>
-          <button class="rotate-180">&#10141;</button>
-          <button>&percnt;</button>
-
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>&divide;</button>
-
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>&times;</button>
-
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>&plus;</button>
-
-          <button class="col-span-2">0</button>
-          <button>.</button>
-          <button>&minus;</button>
+          <button data-operation="allclear">AC</button>
+          <button data-operation="back">Back</button>
+          <button data-operation="percent">&percnt;</button>
+          <button data-operation="divide">&divide;</button>
+          <button data-number="7">7</button>
+          <button data-number="8">8</button>
+          <button data-number="9">9</button>
+          <button data-operation="multiply">&times;</button>
+          <button data-number="4">4</button>
+          <button data-number="5">5</button>
+          <button data-number="6">6</button>
+          <button data-operation="plus">&plus;</button>
+          <button data-number="1">1</button>
+          <button data-number="2">2</button>
+          <button data-number="3">3</button>
+          <button data-operation="minus">&minus;</button>
+          <button data-number="0" class="col-span-2">0</button>
+          <button data-number=".">.</button>
+          <button data-operation="equals">=</button>
         </div>
       </div>
     </div>
